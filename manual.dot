@@ -10,6 +10,19 @@ digraph G {
     dopeName [label="shownText", shape="polygon"]
     b [fillcolor=yellow fixedsize=true label="label1"]
     d [fixedsize=shape label="label2"]
+
+    // This property changes the default orientation of how the edges flow
+    // rankdir=LR
+    // node [shape=box, color=blue]
+    node1 [style=filled] 
+    node2 [style=filled, fillcolor=red] 
+    node0 -> node1 -> node2
+
+    node1 [shape=box]
+    node2 [fillcolor=yellow, style="rounded,filled", shape=diamond]
+    node3 [shape=record, label="{ a | b | c }"]
+
+    node1 -> node2 -> node3
     
     /* Relationships */
     F1 -> shortName[label=".63" color="blue"]
@@ -24,4 +37,12 @@ digraph G {
     /* Ranks */
     { rank=same; shortName; F1;};
     { rank=same; longName; SOMETHING;};
+
+
+    subgraph cluster_big {
+      graph [class="big_cats"];
+  
+      "Lion" [class="yellow social"];
+      "Snow Leopard" [class="white solitary"];
+    };
 }
