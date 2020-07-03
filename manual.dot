@@ -2,15 +2,24 @@ digraph G {
     // splines="FALSE";
 
     /* Entities */
+    // General styling
+    node [margin=0 fontcolor=blue fontsize=18 width=0.5 shape=circle style=filled]
+    // Data
     shortName [label="shortName", shape="square"]
-    longName [label="longNameText", shape="diamond"]
+    longName [label="longNameText", shape="diamond", color="green"]
+    dopeName [label="shownText", shape="polygon"]
+    b [fillcolor=yellow fixedsize=true label="label1"]
+    d [fixedsize=shape label="label2"]
     
     /* Relationships */
-    F1 -> shortName[label=".63"]
+    F1 -> shortName[label=".63" color="blue"]
     SOMETHING -> longName
-    SOMETHING -> shortName
+    SOMETHING -> shortName[arrow="crow"]
     shortName -> SOMETHING[label="1234"]
     shortName -> SOMETHING[label="234"]
+
+    a -> {c d}
+    b -> {c d}
 
     /* Ranks */
     { rank=same; shortName; F1;};
