@@ -1,0 +1,18 @@
+digraph G {
+    // splines="FALSE";
+
+    /* Entities */
+    shortName [label="shortName", shape="square"]
+    longName [label="longNameText", shape="diamond"]
+    
+    /* Relationships */
+    F1 -> shortName[label=".63"]
+    SOMETHING -> longName
+    SOMETHING -> shortName
+    shortName -> SOMETHING[label="1234"]
+    shortName -> SOMETHING[label="234"]
+
+    /* Ranks */
+    { rank=same; shortName; F1;};
+    { rank=same; longName; SOMETHING;};
+}
