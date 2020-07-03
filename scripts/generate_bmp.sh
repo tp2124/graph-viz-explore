@@ -1,0 +1,1 @@
+dot -Tbmp ../data/manual.dot -o output.bmp
